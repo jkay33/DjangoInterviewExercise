@@ -35,3 +35,8 @@ templates/front/index.html
 
 This file prompts the users to generate random data into db.
 Simple UI with logic for data generation located in views.py.
+
+views.py
+
+This file contains the Form created to ask user for the amount of data desired to input into database.
+This file also contains the logic to retrieve the data input and generate the fake data.

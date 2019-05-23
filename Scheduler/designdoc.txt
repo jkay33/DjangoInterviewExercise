@@ -34,3 +34,4 @@ api/schedule/ID# where id # = existing ID number in database
 templates/front/index.html
 
 This file prompts the users to generate random data into db.
+Simple UI with logic for data generation located in views.py.

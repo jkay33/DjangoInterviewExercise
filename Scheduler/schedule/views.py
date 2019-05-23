@@ -8,10 +8,10 @@ fake = Faker()
 # Create your views here.
 # Defining home view to return html file
 def home(request):
-
-    class Meta:
-        model = Schedule
-        fields = '__all__'
+    #do not believe this is necessary anymore considering the instance which was created. Will test just in case.
+    #class Meta:
+        #model = Schedule
+        #fields = '__all__'
 
     #intake the data being submitted
     if request.method == 'POST':
@@ -19,13 +19,15 @@ def home(request):
         #if data in form is clean set it to value as int
         if form.is_valid():
             value = int(form.cleaned_data['records'])
-            #generate random data using faker "vale" amount of times
+            #generate random data using faker "value" amount of times
             for x in range(value):
+                #this was created to generate a random choice for status field.
                 status_type=(
                 'scheduled',
                 'work in progress',
                 'done'
                 )
+                #using faker to generate fake data and setting to database.
                 Schedule_Instance = Schedule(
                 name = fake.name(),
                 time = fake.time(),
@@ -33,6 +35,7 @@ def home(request):
                 date = fake.date(),
                 price = fake.random_number(digits=5)
                 )
+                #saveing the information every "value" interation.
                 Schedule_Instance.save()
 
 

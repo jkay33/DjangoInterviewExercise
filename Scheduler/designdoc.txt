@@ -15,6 +15,10 @@ Serializer.py
 
 Serializer is used to take in the data, in this case the model/table to parse and serve http method.
 
+schedule/url.py
+
+This files registers all routes for http methods
+
 api.py
 
 This file creates viewsets which allows CRUD without defining methods.
